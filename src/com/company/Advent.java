@@ -43,14 +43,13 @@ public class Advent {
         stringList = TestUtils.readFileIntoList("day2part1.txt");
         Integer currentx = 0;
         Integer currenty = 0;
-        Integer currentaim = 0;
         for(int i=0; i< stringList.size(); i++){
             String line = stringList.get(i);
-            if(line.startsWith("f")){
+            if(line.startsWith("forward")){
                 currentx += Integer.parseInt(line.substring(7).trim());
-            }else if(line.startsWith("u")){
+            }else if(line.startsWith("up")){
                 currenty -= Integer.parseInt(line.substring(3));
-            }else if(line.startsWith("d")){
+            }else if(line.startsWith("down")){
                 currenty += Integer.parseInt(line.substring(5));
             }
         }
@@ -65,14 +64,14 @@ public class Advent {
         Integer currentaim = 0;
         for(int i=0; i< stringList.size(); i++){
             String line = stringList.get(i);
-            if(line.startsWith("f")){
+            if(line.startsWith("forward")){
                 Integer forwardAmount = Integer.parseInt(line.substring(7).trim());
                 currentx += forwardAmount;
                 currenty += forwardAmount*currentaim;
-            }else if(line.startsWith("u")){
+            }else if(line.startsWith("up")){
                 Integer upAmount = Integer.parseInt(line.substring(3));
                 currentaim -= upAmount;
-            }else if(line.startsWith("d")){
+            }else if(line.startsWith("down")){
                 currentaim += Integer.parseInt(line.substring(5));
             }
         }
